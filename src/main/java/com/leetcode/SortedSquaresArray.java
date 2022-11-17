@@ -13,7 +13,7 @@ public class SortedSquaresArray {
         var sq = new int[nums.length];
         int right = nums.length - 1;
         int left = 0;
-        for (int i = nums.length - 1; i >= 0 ; i--) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             if (Math.abs(nums[left]) > nums[right]) {
                 sq[i] = nums[left] * nums[left];
                 left++;
@@ -21,7 +21,6 @@ public class SortedSquaresArray {
                 sq[i] = nums[right] * nums[right];
                 right--;
             }
-
         }
         return sq;
     }
