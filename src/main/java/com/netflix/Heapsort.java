@@ -1,8 +1,8 @@
 package com.netflix;
 
-public class HeapSort {
+public class Heapsort {
 
-    public void heapSort(int[] arr) {
+    public void heapsort(int[] arr) {
         int N = arr.length;
         buildMaxHeap(arr, N);
         for (int i = N - 1; i >= 0; i --) {
