@@ -1,4 +1,4 @@
-package com.netflix;
+package com.leetcode;
 
 public class ZigZagConversion {
 
