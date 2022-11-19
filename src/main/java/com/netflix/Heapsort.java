@@ -6,9 +6,7 @@ public class Heapsort {
         int N = arr.length;
         buildMaxHeap(arr, N);
         for (int i = N - 1; i >= 0; i--) {
-            var tmp = arr[0];
-            arr[0] = arr[N - 1];
-            arr[N - 1] = tmp;
+            swap(arr, 0, N - 1);
             N = N - 1;
             maxHeapify(arr, 0, N);
         }
@@ -33,12 +31,15 @@ public class Heapsort {
             largest = r;
         }
         if (largest != i) {
-            // swap
-            int tmp = heap[i];
-            heap[i] = heap[largest];
-            heap[largest] = tmp;
+            swap(heap, i, largest);
             maxHeapify(heap, largest, N);
         }
+    }
+
+    private void swap(int[] heap, int i, int j) {
+        int tmp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = tmp;
     }
 
 }

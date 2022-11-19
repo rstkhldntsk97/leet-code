@@ -1,15 +1,6 @@
 package com.netflix;
 
-import java.util.Arrays;
-
 public class Quicksort {
-
-    public static void main(String[] args) {
-        var main = new Quicksort();
-        var arr = new int[]{2, 8, 7, 1, 3, 5, 6, 4};
-        main.quicksort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 
     public void quicksort(int[] arr) {
         quicksort(arr, 0, arr.length - 1);
@@ -29,15 +20,17 @@ public class Quicksort {
         for (int j = begin; j < end; j++) {
             if (arr[j] <= pivot) {
                 i++;
-                int swapTemp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = swapTemp;
+                swap(arr, i, j);
             }
         }
-        int swapTemp = arr[i + 1];
-        arr[i + 1] = arr[end];
-        arr[end] = swapTemp;
+        swap(arr, i + 1, end);
         return i + 1;
+    }
+
+    private void swap(int[] arr, int i, int j) {
+        int swapTemp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = swapTemp;
     }
 
 }
