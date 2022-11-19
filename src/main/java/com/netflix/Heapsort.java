@@ -5,7 +5,7 @@ public class Heapsort {
     public void heapsort(int[] arr) {
         int N = arr.length;
         buildMaxHeap(arr, N);
-        for (int i = N - 1; i >= 0; i --) {
+        for (int i = N - 1; i >= 0; i--) {
             var tmp = arr[0];
             arr[0] = arr[N - 1];
             arr[N - 1] = tmp;
