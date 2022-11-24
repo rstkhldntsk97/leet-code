@@ -1,4 +1,4 @@
-package com.netflix;
+package com.netflix.sort;
 
 public class Mergesort {
 

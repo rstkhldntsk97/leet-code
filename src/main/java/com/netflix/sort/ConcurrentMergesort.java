@@ -1,4 +1,4 @@
-package com.netflix;
+package com.netflix.sort;
 
 import java.util.Arrays;
 import java.util.concurrent.RecursiveAction;
