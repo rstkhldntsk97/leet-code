@@ -7,18 +7,12 @@ public class InsertionSort {
             int key = arr[j];
             int i = j - 1;
             while (i >= 0 && arr[i] > key) {
-                swap(arr, i + 1, i);
+                arr[i + 1] = arr[i];
                 i--;
             }
             arr[i + 1] = key;
         }
         return arr;
-    }
-
-    private void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
     }
 
 }
