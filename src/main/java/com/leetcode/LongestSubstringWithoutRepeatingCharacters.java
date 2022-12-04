@@ -1,27 +1,21 @@
 package com.leetcode;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
-        char[] chars = s.toCharArray();
-        var max = 0;
-        var cur = new ArrayList<Character>();
-        for (int i = 0; i < chars.length; i++) {
-            for (int j = i; j < chars.length; j++) {
-                if (!cur.contains(chars[j])) {
-                    cur.add(chars[j]);
-                } else {
-                    max = Math.max(max, cur.size());
-                    cur.clear();
-                    j--;
-                }
+        int i = 0;
+        int res = 0;
+        var map = new HashMap<Character, Integer>();
+        for (int j = 0; j < s.length(); j++) {
+            if (map.containsKey(s.charAt(j))) {
+                i = Math.max(map.get(s.charAt(j)), i);
             }
-            max = Math.max(max, cur.size());
-            cur.clear();
+            res = Math.max(res, j - i + 1);
+            map.put(s.charAt(j), j + 1);
         }
-        return max;
+        return res;
     }
 
 }
