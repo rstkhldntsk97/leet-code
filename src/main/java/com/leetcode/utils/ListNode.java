@@ -17,4 +17,17 @@ public class ListNode {
         this.next = next;
     }
 
+    @Override
+    public String toString() {
+        var sb = new StringBuilder();
+        var cur = this;
+        while (cur != null) {
+            sb.append(cur.val).append(", ");
+            cur = cur.next;
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+
 }
