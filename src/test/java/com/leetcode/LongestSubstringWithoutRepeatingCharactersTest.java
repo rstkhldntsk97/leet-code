@@ -1,6 +1,5 @@
-package com.leetcode.utils;
+package com.leetcode;
 
-import com.leetcode.LongestSubstringWithoutRepeatingCharacters;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
