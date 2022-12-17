@@ -5,9 +5,6 @@ public class ListNode {
     public int val;
     public ListNode next;
 
-    public ListNode() {
-    }
-
     public ListNode(int val) {
         this.val = val;
     }
@@ -28,6 +25,12 @@ public class ListNode {
         sb.deleteCharAt(sb.length() - 1);
         sb.deleteCharAt(sb.length() - 1);
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof ListNode) return this.toString().equals(obj.toString());
+        else return false;
     }
 
 }
