@@ -15,7 +15,7 @@ class SqrtTest {
         assertEquals(4,main.mySqrt(16));
         assertEquals(4,main.mySqrt(20));
         assertEquals(5,main.mySqrt(25));
-//        assertEquals(46340,main.mySqrt(2147395600));
+        assertEquals(46340,main.mySqrt(2147395600));
     }
 
 }
