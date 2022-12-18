@@ -3,11 +3,15 @@ package com.leetcode;
 public class Sqrt {
 
     public int mySqrt(int x) {
-        int i = 1;
-        while (i * i <= x) {
-            i++;
+        if (x == 0) return 0;
+        for (long i = 2; i <= x; i++) {
+            if (i * i == x) {
+                return (int) i;
+            } else if (i * i > x) {
+                return (int) i - 1;
+            }
         }
-        return i-1;
+        return 1;
     }
 
 }
