@@ -1,26 +1,31 @@
 package com.leetcode;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class MaxSlidingWindow {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
+        int ri = 0;
+        // store index
+        Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < nums.length; i++) {
-            int lastIdx = i + k - 1;
-            if (lastIdx >= nums.length) {
-                break;
+            // remove numbers out of range k
+            while (!deque.isEmpty() && deque.peek() < i - k + 1) {
+                deque.poll();
             }
-            int currMax = findMaxInWindow(nums, i, lastIdx);
-            result[i] = currMax;
+            // remove smaller numbers in k range as they are useless
+            while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+                deque.pollLast();
+            }
+            // deque contains index... result contains content
+            deque.offer(i);
+            if (i >= k - 1) {
+                result[ri++] = nums[deque.peek()];
+            }
         }
         return result;
-    }
-
-    private int findMaxInWindow(int[] nums, int start, int end) {
-        int max = nums[start];
-        for (int i = start + 1; i <= end; i++) {
-            if (nums[i] > max) max = nums[i];
-        }
-        return max;
     }
 
 }
