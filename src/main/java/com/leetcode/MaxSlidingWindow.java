@@ -7,7 +7,7 @@ public class MaxSlidingWindow {
 
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] result = new int[nums.length - k + 1];
-        int ri = 0;
+        int resultIdx = 0;
         // store index
         Deque<Integer> deque = new ArrayDeque<>();
         for (int i = 0; i < nums.length; i++) {
@@ -22,7 +22,7 @@ public class MaxSlidingWindow {
             // deque contains index... result contains content
             deque.offer(i);
             if (i >= k - 1) {
-                result[ri++] = nums[deque.peek()];
+                result[resultIdx++] = nums[deque.peek()];
             }
         }
         return result;
