@@ -5,13 +5,7 @@ import java.util.List;
 
 public class SpiralMatrix {
 
-    public static void main(String[] args) {
-        System.out.println(spiralOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}));
-        System.out.println(spiralOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}));
-        System.out.println(spiralOrder(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}}));
-    }
-
-    public static List<Integer> spiralOrder(int[][] matrix) {
+    public List<Integer> spiralOrder(int[][] matrix) {
         var nums = new ArrayList<Integer>();
         var top = 0;
         var bottom = matrix.length - 1;
