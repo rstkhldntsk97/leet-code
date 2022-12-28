@@ -16,15 +16,9 @@ public class MinimumDepthOfBinaryTree {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode curNode = queue.poll();
-                if (curNode.left == null && curNode.right == null) {
-                    return level;
-                }
-                if (curNode.left != null) {
-                    queue.offer(curNode.left);
-                }
-                if (curNode.right != null) {
-                    queue.offer(curNode.right);
-                }
+                if (curNode.left == null && curNode.right == null) return level;
+                if (curNode.left != null) queue.offer(curNode.left);
+                if (curNode.right != null) queue.offer(curNode.right);
             }
             level++;
         }
